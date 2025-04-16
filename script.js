@@ -29,7 +29,6 @@ GetPuzzle.onclick = function () {
 		var response = JSON.parse(xhrRequest.response);
 		console.log(response);
 
-		// Convert puzzle string to 2D board array
 		let puzzleStr = response.puzzle;
 		let index = 0;
 
@@ -53,12 +52,11 @@ SolvePuzzle.onclick = () => {
 
 function SudokuSolver(board, row, col, n) {
 	if (row === n) {
-		// Reached end of the board, puzzle solved
+
 		FillBoard(board);
 		return true;
 	}
 
-	// If we reach end of a row, move to next row
 	if (col === n) {
 		return SudokuSolver(board, row + 1, 0, n);
 	}
