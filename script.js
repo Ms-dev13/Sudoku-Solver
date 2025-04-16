@@ -61,7 +61,7 @@ function SudokuSolver(board, row, col, n) {
 		return SudokuSolver(board, row + 1, 0, n);
 	}
 
-	// Skip the cells that are pre-filled
+	 
 	if (board[row][col] !== 0) {
 		return SudokuSolver(board, row, col + 1, n);
 	}
@@ -73,8 +73,7 @@ function SudokuSolver(board, row, col, n) {
 			if (SudokuSolver(board, row, col + 1, n)) {
 				return true;
 			}
-
-			// Backtrack
+ 
 			board[row][col] = 0;
 		}
 	}
